@@ -47,23 +47,40 @@
     --space-dark: 220 15% 8%;
     --space-mid: 220 12% 15%;
 
-    /* Phase colors */
+    /* Infinity Stone colors */
+    --stone-space: 240 70% 50%;
+    --stone-mind: 55 85% 55%;
+    --stone-reality: 0 80% 50%;
+    --stone-power: 280 70% 55%;
+    --stone-time: 140 70% 45%;
+    --stone-soul: 35 90% 55%;
+
+    /* Phase colors - Enhanced with Infinity Stone influence */
     --phase-1: 0 75% 55%;
     --phase-2: 210 80% 50%;
-    --phase-3: 270 60% 55%;
-    --phase-4: 45 90% 55%;
-    --phase-5: 150 60% 45%;
-    --phase-6: 330 70% 55%;
+    --phase-3: 280 70% 55%;
+    --phase-4: 55 85% 55%;
+    --phase-5: 140 70% 45%;
+    --phase-6: 35 90% 55%;
 
     /* Glow effects */
     --glow-red: 0 0 30px hsla(0, 75%, 55%, 0.4);
     --glow-gold: 0 0 30px hsla(45, 90%, 55%, 0.4);
     --glow-blue: 0 0 30px hsla(210, 80%, 50%, 0.4);
+    --glow-purple: 0 0 30px hsla(280, 70%, 55%, 0.4);
 
     /* Gradients */
     --gradient-timeline: linear-gradient(180deg, hsl(220 20% 4%) 0%, hsl(220 15% 8%) 50%, hsl(220 20% 4%) 100%);
     --gradient-card: linear-gradient(135deg, hsl(220 15% 10%) 0%, hsl(220 15% 6%) 100%);
     --gradient-glow: radial-gradient(ellipse at center, hsla(0, 75%, 55%, 0.15) 0%, transparent 70%);
+    --gradient-bifrost: linear-gradient(90deg, 
+      hsl(var(--stone-space)) 0%, 
+      hsl(var(--stone-mind)) 20%, 
+      hsl(var(--stone-reality)) 40%, 
+      hsl(var(--stone-power)) 60%, 
+      hsl(var(--stone-time)) 80%, 
+      hsl(var(--stone-soul)) 100%
+    );
   }
 
   .dark {
@@ -98,6 +115,11 @@
     background-image: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
   }
 
+  .text-gradient-bifrost {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-bifrost);
+  }
+
   .glow-red {
     box-shadow: var(--glow-red);
   }
@@ -110,6 +132,10 @@
     box-shadow: var(--glow-blue);
   }
 
+  .glow-purple {
+    box-shadow: var(--glow-purple);
+  }
+
   .timeline-line {
     background: linear-gradient(180deg, 
       transparent 0%, 
@@ -118,6 +144,24 @@
       hsl(var(--primary) / 0.6) 90%, 
       transparent 100%
     );
+  }
+
+  .bifrost-trail {
+    background: var(--gradient-bifrost);
+    animation: bifrost-shimmer 3s linear infinite;
+  }
+
+  @keyframes bifrost-shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  .glassmorphism {
+    @apply backdrop-blur-xl bg-card/60 border border-border/40;
+  }
+
+  .glassmorphism-strong {
+    @apply backdrop-blur-2xl bg-card/80 border border-border/50;
   }
 
   .card-glow {
@@ -154,6 +198,39 @@
     transform: translateX(100%);
   }
 
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float-particle 4s ease-in-out infinite;
+  }
+
+  @keyframes float-particle {
+    0%, 100% { 
+      transform: translateY(0) translateX(0) scale(1);
+      opacity: 0.6;
+    }
+    50% { 
+      transform: translateY(-20px) translateX(10px) scale(1.2);
+      opacity: 1;
+    }
+  }
+
+  .energy-pulse {
+    animation: energy-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes energy-pulse {
+    0%, 100% { 
+      box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+    }
+    50% { 
+      box-shadow: 0 0 20px currentColor, 0 0 40px currentColor, 0 0 60px currentColor;
+    }
+  }
+
   .animate-pulse-slow {
     animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
@@ -175,4 +252,24 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  .snap-x {
+    scroll-snap-type: x mandatory;
+  }
+
+  .snap-center {
+    scroll-snap-align: center;
+  }
+
+  .snap-start {
+    scroll-snap-align: start;
+  }
+
+  /* Phase-specific glows */
+  .glow-phase-1 { box-shadow: 0 0 30px hsla(var(--phase-1), 0.4); }
+  .glow-phase-2 { box-shadow: 0 0 30px hsla(var(--phase-2), 0.4); }
+  .glow-phase-3 { box-shadow: 0 0 30px hsla(var(--phase-3), 0.4); }
+  .glow-phase-4 { box-shadow: 0 0 30px hsla(var(--phase-4), 0.4); }
+  .glow-phase-5 { box-shadow: 0 0 30px hsla(var(--phase-5), 0.4); }
+  .glow-phase-6 { box-shadow: 0 0 30px hsla(var(--phase-6), 0.4); }
 }
