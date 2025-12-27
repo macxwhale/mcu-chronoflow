@@ -62,6 +62,14 @@ export default {
           5: "hsl(var(--phase-5))",
           6: "hsl(var(--phase-6))",
         },
+        stone: {
+          space: "hsl(var(--stone-space))",
+          mind: "hsl(var(--stone-mind))",
+          reality: "hsl(var(--stone-reality))",
+          power: "hsl(var(--stone-power))",
+          time: "hsl(var(--stone-time))",
+          soul: "hsl(var(--stone-soul))",
+        },
         space: {
           black: "hsl(var(--space-black))",
           dark: "hsl(var(--space-dark))",
@@ -102,6 +110,19 @@ export default {
           from: { strokeDashoffset: "1000" },
           to: { strokeDashoffset: "0" },
         },
+        "slide-in-left": {
+          from: { transform: "translateX(-100%)", opacity: "0" },
+          to: { transform: "translateX(0)", opacity: "1" },
+        },
+        "slide-in-right": {
+          from: { transform: "translateX(100%)", opacity: "0" },
+          to: { transform: "translateX(0)", opacity: "1" },
+        },
+        "energy-flow": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -110,10 +131,14 @@ export default {
         "scale-in": "scale-in 0.4s ease-out forwards",
         "glow-pulse": "glow-pulse 2s ease-in-out infinite",
         "line-draw": "line-draw 2s ease-out forwards",
+        "slide-in-left": "slide-in-left 0.5s ease-out",
+        "slide-in-right": "slide-in-right 0.5s ease-out",
+        "energy-flow": "energy-flow 3s ease infinite",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "space-gradient": "linear-gradient(180deg, hsl(var(--space-black)) 0%, hsl(var(--space-dark)) 50%, hsl(var(--space-black)) 100%)",
+        "bifrost-gradient": "linear-gradient(90deg, hsl(var(--stone-space)), hsl(var(--stone-mind)), hsl(var(--stone-reality)), hsl(var(--stone-power)), hsl(var(--stone-time)), hsl(var(--stone-soul)))",
       },
     },
   },
