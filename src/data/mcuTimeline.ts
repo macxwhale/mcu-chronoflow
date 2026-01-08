@@ -21,7 +21,7 @@ export const mcuTimelineData: MCUNode[] = [
     platform: "Disney+",
     synopsis: "An anthology series spanning millennia, following Wakandan warriors across different eras as they protect vibranium from those who would use it for destruction.",
     key_characters: ["Wakandan Warriors", "Ancestral Protectors"],
-    poster_url: "https://image.tmdb.org/t/p/w500/u8TxXKkIEsqLNFpxmxmhItkzQ7K.jpg",
+    poster_url: "https://image.tmdb.org/t/p/w500/rUeBVbR9lBU8qMETgsXgeceVRFP.jpg",
     chronological_order: 1,
     type: "series"
   },
@@ -513,7 +513,7 @@ export const mcuTimelineData: MCUNode[] = [
     platform: "Disney+",
     synopsis: "Matt Murdock continues his fight for justice as the vigilante Daredevil while navigating his complicated relationship with Wilson Fisk, the Kingpin of Crime.",
     key_characters: ["Matt Murdock", "Wilson Fisk", "Karen Page", "Foggy Nelson", "Punisher"],
-    poster_url: "https://image.tmdb.org/t/p/w500/hUmvPlthQrtTk8cNqr1WEDC0kVn.jpg",
+    poster_url: "https://image.tmdb.org/t/p/w500/vAkeCjX7rdC3Ya6tZ7IbnAi7UH4.jpg",
     chronological_order: 42,
     type: "series"
   },
